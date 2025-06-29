@@ -19,7 +19,8 @@ namespace WebApplication2.Controllers
         public IActionResult Index()
         {
             List<Course> courses = new List<Course>();
-            var connectionString = _configuration.GetConnectionString("Azure_ConString");
+            var _config= _configuration.GetSection("common:settings");
+            var connectionString = _config.GetValue<string>("dbpassword");
             _logger.LogInformation("Connection String: {ConnectionString}", connectionString);
             try
             {
