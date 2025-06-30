@@ -1,8 +1,10 @@
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Configuration.AddAzureAppConfiguration("Endpoint=https://appconfigaz204.azconfig.io;Id=vio4;Secret=B6LIMPnYRZb6fdmPqD7JwTRsM1snG5qMncVB7rJzh5Sa2WpaIlUxJQQJ99BFACi5Ypzm1YLMAAABAZAC3TN3");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
